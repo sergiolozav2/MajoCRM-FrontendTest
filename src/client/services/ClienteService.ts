@@ -5,56 +5,69 @@
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
-export class SesionWaService {
+export class ClienteService {
     /**
-     * @param sesionId
+     * @param authorization
      * @returns any Default Response
      * @throws ApiError
      */
-    public static getWhatsappSesion(
-        sesionId: string,
+    public static getCliente(
+        authorization: string,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/whatsapp/sesion',
-            query: {
-                'sesionID': sesionId,
+            url: '/cliente/',
+            headers: {
+                'authorization': authorization,
             },
         });
     }
     /**
+     * @param authorization
      * @param body
      * @returns any Default Response
      * @throws ApiError
      */
-    public static postWhatsappEnviarMensaje(
+    public static postCliente(
+        authorization: string,
         body?: {
-            sesionID: string;
-            mensaje: string;
-            telefono: string;
+            identificador: string;
+            cliente: {
+                nombreCliente: string;
+            };
         },
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/whatsapp/enviar-mensaje',
+            url: '/cliente/',
+            headers: {
+                'authorization': authorization,
+            },
             body: body,
         });
     }
     /**
+     * @param authorization
      * @param body
      * @returns any Default Response
      * @throws ApiError
      */
-    public static postWhatsappEnviarImagen(
+    public static putCliente(
+        authorization: string,
         body?: {
-            sesionID: string;
-            telefono: string;
-            url: string;
+            clienteID: number;
+            identificador?: string;
+            cliente?: {
+                nombreCliente: string;
+            };
         },
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
-            method: 'POST',
-            url: '/whatsapp/enviar-imagen',
+            method: 'PUT',
+            url: '/cliente/',
+            headers: {
+                'authorization': authorization,
+            },
             body: body,
         });
     }

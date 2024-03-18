@@ -44,7 +44,7 @@ export class AuthService {
             password: string;
         },
     ): CancelablePromise<any> {
-        return __request(OpenAPI, {
+        return __request({...OpenAPI, WITH_CREDENTIALS: true}, {
             method: 'POST',
             url: '/auth/login',
             body: body,

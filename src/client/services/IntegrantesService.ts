@@ -11,11 +11,11 @@ export class IntegrantesService {
      * @returns any Default Response
      * @throws ApiError
      */
-    public static postIntegrantes(
+    public static getIntegrantes(
         authorization: string,
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
-            method: 'POST',
+            method: 'GET',
             url: '/integrantes/',
             headers: {
                 'authorization': authorization,
@@ -23,11 +23,43 @@ export class IntegrantesService {
         });
     }
     /**
+     * @param authorization
+     * @param body
+     * @returns any Default Response
+     * @throws ApiError
+     */
+    public static putIntegrantes(
+        authorization: string,
+        body?: {
+            usuario: {
+                nombre?: string;
+                apellido?: string;
+                segundoApellido?: string;
+                correo?: string;
+                telefono?: string;
+                password?: string;
+                verificado?: boolean;
+            };
+            usuarioID: number;
+        },
+    ): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'PUT',
+            url: '/integrantes/',
+            headers: {
+                'authorization': authorization,
+            },
+            body: body,
+        });
+    }
+    /**
+     * @param authorization
      * @param body
      * @returns any Default Response
      * @throws ApiError
      */
     public static postIntegrantesInvitarUsuario(
+        authorization: string,
         body?: {
             usuario: {
                 nombre: string;
@@ -38,12 +70,14 @@ export class IntegrantesService {
                 password: string;
                 verificado: boolean;
             };
-            empresaID: number;
         },
     ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
             url: '/integrantes/invitar_usuario',
+            headers: {
+                'authorization': authorization,
+            },
             body: body,
         });
     }

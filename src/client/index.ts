@@ -8,6 +8,8 @@ export { OpenAPI } from './core/OpenAPI';
 export type { OpenAPIConfig } from './core/OpenAPI';
 
 export { AuthService } from './services/AuthService';
+export { ClienteService } from './services/ClienteService';
 export { IntegrantesService } from './services/IntegrantesService';
 export { ItemsService } from './services/ItemsService';
-export { SesionWaService } from './services/SesionWaService';
+export { MensajesService } from './services/MensajesService';
+export { WhatsappService } from './services/WhatsappService';
