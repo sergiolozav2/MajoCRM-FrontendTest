@@ -12,7 +12,7 @@ export function useServerEvents(url: string) {
   const [isOpen, setIsOpen] = useState(false);
 
   function startSSE() {
-    const eventSource = new EventSource(url);
+    const eventSource = new EventSource(url, { withCredentials: true });
     eventSource.onmessage = (event) => {
       const message = JSON.parse(event.data);
       setEvent({
