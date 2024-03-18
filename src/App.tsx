@@ -1,4 +1,5 @@
 import "./App.css";
+import { BaseAppPage } from "./components/BaseApp/BaseAppPage";
 import { ImageQR } from "./components/ImageQR";
 import { ReceiveMessagesBox } from "./components/ReceiveMessagesBox/ReceiveMessagesBox";
 import { SendImageBox } from "./components/SendImageBox";
@@ -34,6 +35,8 @@ function App() {
       <div>
         <ReceiveMessagesBox />
       </div>
+
+      <BaseAppPage />
     </div>
   );
 }
