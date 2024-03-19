@@ -1,5 +1,6 @@
 import "./App.css";
 import { BaseAppPage } from "./components/BaseApp/BaseAppPage";
+import { CreateChatPage } from "./components/CreateChatPage/CreateChatPage";
 import { ImageQR } from "./components/ImageQR";
 import { ReceiveMessagesBox } from "./components/ReceiveMessagesBox/ReceiveMessagesBox";
 import { SendImageBox } from "./components/SendImageBox";
@@ -37,6 +38,7 @@ function App() {
       </div>
 
       <BaseAppPage />
+      <CreateChatPage />
     </div>
   );
 }
