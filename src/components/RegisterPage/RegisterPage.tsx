@@ -4,6 +4,7 @@ import { Button } from "../Button";
 import { ModuleWrapper } from "../ModuleWrapper";
 import { BasicInput } from "../BasicInput";
 import { ResponseBox } from "../ResponseBox";
+import { InputWrapper } from "../InputWrapper";
 
 export function RegisterPage() {
   const [usuario, setUsuario] = useState({
@@ -32,7 +33,7 @@ export function RegisterPage() {
   }
   return (
     <ModuleWrapper className="bg-blue-300">
-      <div className="flex flex-col min-w-64">
+      <InputWrapper>
         <p>Registrar cuenta nueva</p>
         <BasicInput
           label="Nombre"
@@ -77,7 +78,7 @@ export function RegisterPage() {
           setData={setEmpresa}
         />
         <Button onClick={handleRegisterPage}>Crear cuenta</Button>
-      </div>
+      </InputWrapper>
       <ResponseBox result={response} />
     </ModuleWrapper>
   );

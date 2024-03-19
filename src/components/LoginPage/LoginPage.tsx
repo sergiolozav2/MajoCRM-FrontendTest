@@ -4,6 +4,7 @@ import { ModuleWrapper } from "../ModuleWrapper";
 import { ResponseBox } from "../ResponseBox";
 import { BasicInput } from "../BasicInput";
 import { Button } from "../Button";
+import { InputWrapper } from "../InputWrapper";
 
 export function LoginPage() {
   const [data, setData] = useState({ email: "", password: "" });
@@ -20,7 +21,7 @@ export function LoginPage() {
 
   return (
     <ModuleWrapper className="bg-yellow-300">
-      <div className="flex flex-col min-w-64">
+      <InputWrapper>
         <p>Iniciar sesión</p>
         <BasicInput
           label="Correo"
@@ -35,7 +36,7 @@ export function LoginPage() {
           setData={setData}
         />
         <Button onClick={handleLogin}>Iniciar sesión</Button>
-      </div>
+      </InputWrapper>
       <ResponseBox result={response} />
     </ModuleWrapper>
   );
