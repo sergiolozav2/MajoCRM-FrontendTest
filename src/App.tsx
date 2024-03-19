@@ -3,6 +3,7 @@ import { BaseAppPage } from "./components/BaseApp/BaseAppPage";
 import { CreateChatPage } from "./components/CreateChatPage/CreateChatPage";
 import { ImageQR } from "./components/ImageQR";
 import { ReceiveMessagesBox } from "./components/ReceiveMessagesBox/ReceiveMessagesBox";
+import { RegisterPage } from "./components/RegisterPage/RegisterPage";
 import { SendImageBox } from "./components/SendImageBox";
 import { SendMessageBox } from "./components/SendMessageBox";
 import { useCreateSessionWA } from "./hooks/useCreateSessionWA";
@@ -37,6 +38,7 @@ function App() {
         <ReceiveMessagesBox />
       </div>
 
+      <RegisterPage />
       <BaseAppPage />
       <CreateChatPage />
     </div>

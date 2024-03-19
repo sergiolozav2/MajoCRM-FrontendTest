@@ -7,19 +7,14 @@ import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 export class WhatsappService {
     /**
-     * @param sesionId
+     * Para crear sesiones
      * @returns any Default Response
      * @throws ApiError
      */
-    public static getWhatsappSesion(
-        sesionId: string,
-    ): CancelablePromise<any> {
+    public static getWhatsappSesion(): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'GET',
             url: '/whatsapp/sesion',
-            query: {
-                'sesionID': sesionId,
-            },
         });
     }
     /**

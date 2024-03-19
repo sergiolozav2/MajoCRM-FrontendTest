@@ -20,7 +20,7 @@ export class AuthService {
                 correo: string;
                 telefono: string;
                 password: string;
-                verificado: boolean;
+                verificado?: boolean;
             };
             empresa: {
                 nombreEmpresa: string;
@@ -44,7 +44,7 @@ export class AuthService {
             password: string;
         },
     ): CancelablePromise<any> {
-        return __request({...OpenAPI, WITH_CREDENTIALS: true}, {
+        return __request(OpenAPI, {
             method: 'POST',
             url: '/auth/login',
             body: body,

@@ -68,7 +68,7 @@ export class IntegrantesService {
                 correo: string;
                 telefono: string;
                 password: string;
-                verificado: boolean;
+                verificado?: boolean;
             };
         },
     ): CancelablePromise<any> {
