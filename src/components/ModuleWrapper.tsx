@@ -5,7 +5,9 @@ type ModuleWrapperProps = {
 export function ModuleWrapper(props: ModuleWrapperProps) {
   return (
     <div className={`py-8 flex flex-col w-full ${props.className}`}>
-      {props.children}
+      <div className="mx-auto border border-stone-700 gap-1 w-full flex flex-col max-w-md">
+        {props.children}
+      </div>
     </div>
   );
 }
