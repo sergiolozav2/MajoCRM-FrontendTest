@@ -1,32 +1,42 @@
 import { useState } from "react";
 import { AuthService } from "../../client";
 import { ModuleWrapper } from "../ModuleWrapper";
+import { ResponseBox } from "../ResponseBox";
+import { BasicInput } from "../BasicInput";
+import { Button } from "../Button";
 
 export function LoginPage() {
   const [data, setData] = useState({ email: "", password: "" });
-  const [result, setResult] = useState(undefined);
+  const [response, setResponse] = useState(undefined);
   async function handleLogin() {
-    const response = await AuthService.postAuthLogin(data);
-    setResult(response);
+    AuthService.postAuthLogin(data)
+      .then((result) => {
+        setResponse(result);
+      })
+      .catch((error) => {
+        setResponse(error);
+      });
   }
 
   return (
     <ModuleWrapper className="bg-yellow-300">
-      <p>Iniciar sesión</p>
-      <label>Correo</label>
-      <input
-        type="text"
-        onChange={(e) => setData((d) => ({ ...d, email: e.target.value }))}
-      />
-      <label>Contraseña</label>
-      <input
-        type="password"
-        onChange={(e) => setData((d) => ({ ...d, password: e.target.value }))}
-      />
-      <button className="bg-black text-stone-50" onClick={handleLogin}>
-        Iniciar sesión
-      </button>
-      {<pre className="overflow-auto">{JSON.stringify(result, null, 2)}</pre>}
+      <div className="flex flex-col min-w-64">
+        <p>Iniciar sesión</p>
+        <BasicInput
+          label="Correo"
+          dataName="email"
+          defaultValue="user@example.com"
+          setData={setData}
+        />
+        <BasicInput
+          label="Contraseña"
+          dataName="password"
+          defaultValue="string"
+          setData={setData}
+        />
+        <Button onClick={handleLogin}>Iniciar sesión</Button>
+      </div>
+      <ResponseBox result={response} />
     </ModuleWrapper>
   );
 }
