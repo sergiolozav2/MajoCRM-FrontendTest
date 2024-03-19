@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AuthService, MensajesService } from "../../client";
+import { ModuleWrapper } from "../ModuleWrapper";
 
 export function BaseAppPage() {
   const [data, setData] = useState({ email: "", password: "" });
@@ -14,7 +15,7 @@ export function BaseAppPage() {
     console.log(messages);
   }
   return (
-    <div className="py-8 flex flex-col w-full bg-yellow-300">
+    <ModuleWrapper className="bg-yellow-300">
       <div className="mx-auto border border-stone-700 gap-1 flex flex-col max-w-96">
         <p>Iniciar sesión</p>
         <label>Correo</label>
@@ -30,10 +31,8 @@ export function BaseAppPage() {
         <button className="bg-black text-stone-50" onClick={handleLogin}>
           Iniciar sesión
         </button>
-
         {<pre className="overflow-auto">{JSON.stringify(result, null, 2)}</pre>}
       </div>
-
       <div className="mx-auto border border-stone-700 gap-1 flex flex-col max-w-96">
         <p>Obtener mensajes</p>
         <button
@@ -43,6 +42,6 @@ export function BaseAppPage() {
           Obtener mensajes
         </button>
       </div>
-    </div>
+    </ModuleWrapper>
   );
 }
