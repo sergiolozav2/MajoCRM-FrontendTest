@@ -1,5 +1,5 @@
 import "./App.css";
-import { BaseAppPage } from "./components/BaseApp/BaseAppPage";
+import { LoginPage } from "./components/LoginPage/LoginPage";
 import { CreateChatPage } from "./components/CreateChatPage/CreateChatPage";
 import { ImageQR } from "./components/ImageQR";
 import { ReceiveMessagesBox } from "./components/ReceiveMessagesBox/ReceiveMessagesBox";
@@ -39,7 +39,7 @@ function App() {
       </div>
 
       <RegisterPage />
-      <BaseAppPage />
+      <LoginPage />
       <CreateChatPage />
     </div>
   );

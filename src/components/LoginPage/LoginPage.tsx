@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AuthService } from "../../client";
 import { ModuleWrapper } from "../ModuleWrapper";
 
-export function BaseAppPage() {
+export function LoginPage() {
   const [data, setData] = useState({ email: "", password: "" });
   const [result, setResult] = useState(undefined);
   async function handleLogin() {
