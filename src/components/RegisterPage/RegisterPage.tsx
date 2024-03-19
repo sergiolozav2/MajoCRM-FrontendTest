@@ -53,15 +53,15 @@ export function RegisterPage() {
           setData={setUsuario}
         />
         <BasicInput
-          label="Password"
-          dataName="password"
-          defaultValue="string"
-          setData={setUsuario}
-        />
-        <BasicInput
           label="Correo"
           dataName="correo"
           defaultValue="user@example.com"
+          setData={setUsuario}
+        />
+        <BasicInput
+          label="Password"
+          dataName="password"
+          defaultValue="string"
           setData={setUsuario}
         />
         <BasicInput
