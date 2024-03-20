@@ -8,6 +8,7 @@ import { SendImageBox } from "./components/SendImageBox";
 import { SendMessageBox } from "./components/SendMessageBox";
 import { useCreateSessionWA } from "./hooks/useCreateSessionWA";
 import { apiURL } from "./services/constants";
+import { WaSesionesPage } from "./components/WaSesionesPage/WaSesionesPage";
 
 const url = "whatsapp/sesion?sesionID=";
 const sesionID = "holas";
@@ -41,6 +42,7 @@ function App() {
       <RegisterPage />
       <LoginPage />
       <CreateChatPage />
+      <WaSesionesPage />
     </div>
   );
 }
