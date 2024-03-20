@@ -18,6 +18,17 @@ export class WhatsappService {
         });
     }
     /**
+     * Para obtener sesiones de whatsapp
+     * @returns any Default Response
+     * @throws ApiError
+     */
+    public static getWhatsappSesiones(): CancelablePromise<any> {
+        return __request(OpenAPI, {
+            method: 'GET',
+            url: '/whatsapp/sesiones',
+        });
+    }
+    /**
      * @param sesionId
      * @returns any Default Response
      * @throws ApiError
