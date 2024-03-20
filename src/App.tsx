@@ -12,6 +12,7 @@ function App() {
       <LoginPage />
       <CreateChatPage />
       <WaSesionesPage />
+      <ViewChatPage />
     </div>
   );
 }
