@@ -6,7 +6,7 @@ import { InputWrapper } from "../InputWrapper";
 import { ModuleWrapper } from "../ModuleWrapper";
 
 const url = "whatsapp/sesion";
-export function CreateChatPage() {
+export function CreateWaSessionPage() {
   const { qr, startSSE } = useCreateSessionWA(`${apiURL}${url}`);
 
   function handleStartSSE() {
